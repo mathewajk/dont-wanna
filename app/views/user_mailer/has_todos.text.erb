@@ -1,0 +1,6 @@
+Good morning!
+
+Here are your To-Don'ts for today:
+<% @user.to_donts.each do |to_dont| %>
+    I don't want to<%= to_dont.task %>!
+<% end %>

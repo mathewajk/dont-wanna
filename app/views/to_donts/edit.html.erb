@@ -1,0 +1,5 @@
+<%= turbo_frame_tag @to_dont do %>
+    <%= render "form", to_dont: @to_dont  %>
+    <%= button_to "Delete", @to_dont, method: :delete %>
+    <%= link_to "Cancel", @to_dont, data: { turbo_frame: "to_donts" } %>
+<% end %>

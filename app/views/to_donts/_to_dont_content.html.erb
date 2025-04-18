@@ -1,0 +1,6 @@
+<div class="task">
+    <input type="checkbox" class="checkbox" <%= to_dont.completed ? "checked" : "" %> data-action="click->todont#toggle" data-id="<%= to_dont.id %>"> 
+    I don't want to <%= link_to to_dont.task, to_dont, data: { turbo_frame: "_top" } %>! 
+    <span class="timestamp"><%= l to_dont.created_at, :format => :date %></span>
+    <%= link_to "Edit", edit_to_dont_path(to_dont) %>
+</div>

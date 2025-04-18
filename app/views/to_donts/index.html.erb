@@ -1,0 +1,18 @@
+<h2>My To-Don'ts</h2>
+
+<div class="form-container inline">
+    <%= turbo_frame_tag "new_to_dont", src: new_to_dont_path %>
+</div>
+
+<section>
+    <div id="to_donts">
+        <%= render @to_donts.where(completed: false) %>
+    </div>
+</section>
+
+<section>
+    <h2 data-controller="todont" data-action="click->todont#toggleCompleted" class="accordion">Completed To-Don'ts</h2>
+    <div id="completed_to_donts" class="hidden">
+        <%= render @to_donts.where(completed: true) %>
+    </div>
+</section>

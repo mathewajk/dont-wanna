@@ -1,0 +1,169 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: "Jost", Tahoma, sans-serif;
+
+    --dark-green: #033529;
+    --medium-green: #326d5f;
+    --light-green: #cae4de;
+
+    min-height: 100vh;
+ }
+ 
+ .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 5px solid var(--dark-green);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+ }
+
+ .header .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark-green);
+ }
+ 
+ nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+ }
+ 
+ main {
+    padding: 1rem 2.5rem;
+ }
+
+ section {
+   margin-bottom: 4rem;
+ }
+
+ footer {
+   padding: 1rem 1rem;
+   background-color: var(--dark-green);
+   color: white;
+   display:flex;
+   flex-direction: column;
+ }
+
+ footer nav {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 0.25rem;
+ }
+
+ footer nav a {
+   color: white;
+ }
+
+ footer .copyright {
+   font-size: 0.8rem;
+   text-align: right;
+   margin: 0;
+ }
+
+ nav h2 {
+   font-size: 1rem;
+   margin: 0.5rem 0;
+ }
+ a {
+    color: var(--dark-green);
+    cursor: pointer;
+    transition: color 0.1s ease;
+    text-decoration: none;
+ }
+
+ a:hover {
+    color: var(--medium-green);
+    transition: color 0.1s ease;
+ }
+
+ button, input[type="submit"] {
+    background-color: var(--medium-green);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+ }
+
+ .inline button, .inline input[type="submit"] {
+    padding: 0.25rem 0.5rem;
+ }
+
+ button:hover, input[type="submit"]:hover {
+    background-color: var(--dark-green);
+    transition: background-color 0.1s ease;
+ }
+
+ .task .timestamp {
+    font-size: 0.8rem;
+    color: #c0c0c0;
+ }
+ 
+ .inline .form-group {
+    display: flex;
+    gap: 10px;
+}
+
+.inline turbo-frame {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.form-container {
+   margin-bottom: 1rem;
+}
+
+.inline form {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.loading {
+    background-color: var(--light-green);
+    padding: 0rem;
+    border-radius: 0.25rem;
+    animation: loading 1s linear infinite;
+    margin-bottom: 0.5rem;
+}
+
+h2.accordion {
+    cursor: pointer;
+    color: var(--dark-green);
+}
+
+h2.accordion::before {
+   content: "▼";
+   margin-right: 0.5rem;
+}
+
+h2.accordion.open::before {
+   content: "▲";
+   margin-right: 0.5rem;
+}
+
+.hidden {
+   display: none;
+}

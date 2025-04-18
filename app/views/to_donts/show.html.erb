@@ -1,0 +1,5 @@
+<%= turbo_frame_tag @to_dont do %>
+    <% cache @to_dont do %>
+        <%= render "to_dont_content", to_dont: @to_dont %>
+    <% end %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>Good morning!</h1>
+
+<p>
+  Here are your To-Don'ts for today:
+</p>
+
+<ul>
+  <% @user.to_donts.where(completed: false).each do |to_dont| %>
+    <li>I don't want to <%= to_dont.task %>!</li>
+  <% end %>
+</ul>

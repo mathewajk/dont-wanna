@@ -1,0 +1,9 @@
+<h1>What don't you want to do today?</h1>
+
+<% unless authenticated? %>
+    To not do things, please <%= link_to "log in", new_session_path %> or <%= link_to "sign up", new_user_path %>.
+<% end %>
+
+<% if authenticated? %>
+    <%= link_to "Add some to-don'ts!", to_donts_path %>
+<% end %>

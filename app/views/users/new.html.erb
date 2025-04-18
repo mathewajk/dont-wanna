@@ -1,0 +1,36 @@
+<h1>Sign Up</h1>
+
+<%= form_with model: @user do |form| %>
+    <div>
+        <%= form.label :email_address %>
+        <%= form.text_field :email_address, class: "#{'error' if @user.errors[:email_address].any?}" %>
+        <% @user.errors[:email_address].each do |message| %>
+            <div class="error-message"><%= message %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :password %>
+        <%= form.password_field :password, class: "#{'error' if @user.errors[:password].any?}" %>
+        <% @user.errors[:password].each do |message| %>
+            <div class="error-message"><%= message %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, class: "#{'error' if @user.errors[:password_confirmation].any?}" %>
+        <% @user.errors[:password_confirmation].each do |message| %>
+            <div class="error-message"><%= message %></div>
+        <% end %>
+    </div>
+    <%= form.submit %>
+<% end %>
+
+<style>
+    .error-message {
+        color: red;
+    }
+
+    input.error {
+        border-color: red;
+    }
+</style>
