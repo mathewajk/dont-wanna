@@ -1,9 +1,41 @@
-<h1>What don't you want to do today?</h1>
-
 <% unless authenticated? %>
     To not do things, please <%= link_to "log in", new_session_path %> or <%= link_to "sign up", new_user_path %>.
 <% end %>
 
 <% if authenticated? %>
-    <%= link_to "Add some to-don'ts!", to_donts_path %>
+    <div class="column-1">        
+        <section>
+            <h2>My To-Don'ts</h2>
+            <div class="card">
+                <div class="form-container inline">
+                    <%= turbo_frame_tag "new_to_dont", src: new_to_dont_path %>
+                </div>
+                <div id="to_donts">
+                    <%= render @to_donts.where(completed: false) %>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 data-controller="todont" data-action="click->todont#toggleCompleted" class="accordion">Completed To-Don'ts</h2>
+            <div id="completed_to_donts" class="hidden">
+                <div class="card">
+                    <%= render @to_donts.where(completed: true) %>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="column-2">
+        <section>
+            <h2>Rental Listings</h2>
+            <div class="card">
+                <div class="rental-listing-container">
+                    <%= render "rental_listings/rental_listing_header" %>
+                </div>
+                <%= render @rental_listings %>
+            </div>
+        </section>
+    </div>
 <% end %>
+

@@ -1,0 +1,11 @@
+<section>
+<h2>Rental Listings</h2>
+    <div class="card">
+        <div class="rental-listing-container">
+            <%= render "rental_listing_header" %>
+        </div>
+        <% for rental_listing in @rental_listings %>
+            <%= render "rental_listing_content", rental_listing: rental_listing %>
+        <% end %>
+    </div>
+</section>

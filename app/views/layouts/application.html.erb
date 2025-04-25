@@ -22,27 +22,29 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload", media: "all" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <div class="notice"><%= notice %></div>
     <div class="header">
-        <span class="title">Don't Wanna!</span>
+        <a class="title" href="<%= root_path %>">Don't Wanna!</a>
         <nav>
             <%= link_to "To-Don'ts", to_donts_path %>
+            <%= link_to "Rental Listings", rental_listings_path %>
             <%= link_to "Log In", new_session_path unless authenticated? %>
             <%= button_to "Log Out", session_path, method: :delete if authenticated? %>
         </nav>
     </div>
-      <main>
-          <%= yield %>
-      </main>
+    <main>
+        <%= yield %>
+    </main>
     <footer>
         <nav class="site-map">
             <h2><%= link_to "Don't Wanna!", root_path %></h2>
             <%= link_to "To-Don'ts", to_donts_path %>
+            <%= link_to "Rental Listings", rental_listings_path %>
             <%= link_to "Log In", new_session_path unless authenticated? %>
             <%= link_to "Log Out", session_path, method: :delete if authenticated? %>
         </nav>

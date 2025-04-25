@@ -3,7 +3,8 @@ class IndexController < ApplicationController
   
   def index
     if authenticated?
-      redirect_to to_donts_path
+      @to_donts = ToDont.where(user: Current.user)
+      @rental_listings = RentalListing.all
     end
   end
 end

@@ -1,0 +1,20 @@
+<div class="rental-listing-item <%= rental_listing.available ? "available" : "" %> <%= rental_listing.interested ? "interested" : "" %>" data-controller="rental_listing">
+    <div class="interested">
+        <input type="checkbox" class="checkbox star" <%= rental_listing.contacted ? "checked" : "" %> data-action="click->rental_listing#toggle_interested" data-id="<%= rental_listing.id %>"> 
+    </div>
+    <div class="price">
+        <%= number_to_currency(rental_listing.price, :unit => "$") %>
+    </div>
+    <div class="start">
+        <%= l rental_listing.start_date, :format => :date %>
+    </div>
+    <div class="address">
+        <%= link_to rental_listing.address, rental_listing.url, :class => "external-link" %>
+        <span class="badge <%= rental_listing.contacted ? "contacted" : "not-contacted" %>">
+            <%= rental_listing.contacted ? "Contacted" : "Not Contacted" %>
+        </span>
+    </div>
+    <div class="actions">
+        <%= link_to "Details", rental_listing, :class => "button" %>
+    </div>
+</div>

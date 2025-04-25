@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :to_donts
   patch "to_donts/:id/toggle" => "to_donts#toggle"
   resources :users, only: [:new, :create]
+  resources :rental_listings
 end

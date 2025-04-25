@@ -1,0 +1,53 @@
+<section>
+    <h2>Rental Details</h2>
+        <div class="form-container">
+            <%= form_with model: rental_listing do |form| %>
+                <div class="form-group">
+                    <%= form.label "URL" %>
+                    <%= form.text_field :url %>
+                </div>
+                <div class="form-group">
+                    <%= form.label "Address" %>
+                    <%= form.text_field :address %>
+                </div>
+                <div class="form-group">
+                    <%= form.label "Price" %>
+                    <%= form.text_field :price %>
+                </div>
+                <div class="form-group">
+                    <%= form.label "Start Date" %>
+                    <%= form.text_field :start_date %>
+                </div>
+                <div class="form-group">
+                    <%= form.label "Bedrooms" %>
+                    <%= form.text_field :bedrooms %>
+                </div>
+                <div class="form-group">
+                    <%= form.label "Bathrooms" %>
+                    <%= form.text_field :bathrooms %>
+                </div>
+                <div class="form-group">
+                    <%= form.label "Pets" %>
+                    <%= form.text_field :pets %>
+                </div>
+                 <div class="form-group">
+                    <%= form.label "Contacted" %>
+                    <%= form.check_box :contacted %>
+                </div>
+            <div class="form-group vertical">
+                <h2>Notes</h2>
+                <div class="card">
+                    <%= form.label "Notes" %>
+                    <%= form.rich_text_area :notes %>
+                </div>
+            </div>
+            <div class="form-group">
+                <% if rental_listing.persisted? %>
+                    <%= form.submit "Update Rental" %>
+                <% else %>
+                    <%= form.submit "Add Rental" %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+</section>

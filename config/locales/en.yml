@@ -32,3 +32,10 @@ en:
     formats:
       date: '%m.%d.%Y'
 
+  date:
+    formats:
+      date: '%m.%d.%Y'
+
+  currency:
+    formats:
+      currency: '$%n'

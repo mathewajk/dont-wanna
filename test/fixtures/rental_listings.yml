@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  bedrooms: 1
+  bathrooms: 1.5
+  notes: MyString
+  contacted: false
+
+two:
+  address: MyString
+  bedrooms: 1
+  bathrooms: 1.5
+  notes: MyString
+  contacted: false

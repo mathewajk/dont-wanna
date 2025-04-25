@@ -30,24 +30,51 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
  }
 
+ .card {
+   padding: 1rem;
+   border-bottom: 5px solid var(--dark-green);
+   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+   border-radius: 0.5rem;
+}
+
  .header .title {
     font-size: 2rem;
     font-weight: bold;
     color: var(--dark-green);
  }
  
+ main {
+   display: flex;
+   flex-direction: row;
+   gap: 2rem;
+   padding: 1rem 2.5rem;
+   flex-wrap: wrap;
+ }
+
+ .column-1{
+  flex: 1.25;
+ }
+
+ .column-2{
+   flex: 2;
+ }
+
+ .inline label {
+   width: fit-content;
+ }
+
  nav {
     display: flex;
     gap: 2rem;
     align-items: center;
  }
  
- main {
-    padding: 1rem 2.5rem;
- }
-
  section {
    margin-bottom: 4rem;
+ }
+
+ section.full-width {
+   width: 100%;
  }
 
  footer {
@@ -114,9 +141,17 @@
     color: #c0c0c0;
  }
  
- .inline .form-group {
+.form-group {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-group.vertical {
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .inline turbo-frame {
@@ -129,10 +164,52 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+    margin-bottom: 1rem;
 }
 
-.form-container {
+label {
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 100px;
+    font-weight: bold;
+}
+
+.card-header {
    margin-bottom: 1rem;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.card-header h2 {
+   margin: 0;
+}
+
+a.external-link {
+   position: relative;
+   padding-left: 1.5rem;
+}
+
+a.external-link::before {
+   background-image: url("link.png");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   width: 1rem;
+   height: 1rem;
+   position: absolute;
+   left: 0;
+   top: 0.25rem;
+   content: "";
+}
+
+.card-header .star-container {
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
 }
 
 .inline form {
@@ -166,4 +243,132 @@ h2.accordion.open::before {
 
 .hidden {
    display: none;
+}
+
+.checkbox {
+   width: 1rem;
+   height: 1rem;
+}
+
+.checkbox.star {
+   appearance: none;
+   height: 1.25rem;
+   width: 1.25rem;
+   flex-shrink: 0;
+   background-image: url("star.png");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   cursor: pointer;
+}
+
+.checkbox.star:checked {
+   background-image: url("star_filled.png");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+.rental-listing-container {
+   margin-bottom: 1rem;
+}
+
+.rental-listing-item {
+   display: flex;
+   width: 100%;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   margin-bottom: 0.5rem;
+}
+
+.rental-listing-item .interested {
+   width: 2rem;
+}
+
+.rental-listing-item .contacted {
+   min-width: fit-content;
+}
+
+.rental-listing-item .price, .rental-listing-item .contacted, .rental-listing-item .start {
+   width: 6rem;
+}
+
+.rental-listing-item .actions {
+   display: flex;
+   flex-direction: row;
+   gap: 5px;
+   align-items: center;
+   width: 5rem;
+}
+
+.rental-listing-item .address {
+   min-width: 200px;
+   flex-grow: 1;
+}
+
+.rental-listing-item .address span {
+   margin-left: 0.5rem;
+   display: inline-block;
+   min-width: fit-content;
+   max-width: fit-content;
+   height: fit-content;
+}
+
+.rental-listing-item.table-header {
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+}
+
+.rental-listing-item.table-header > div.price, .rental-listing-item.table-header > div.start, .rental-listing-item.table-header > div.address {
+   border-bottom: 3px solid var(--dark-green);
+}
+
+.badge {
+   padding: 0.25rem 0.5rem;
+   border-radius: 0.25rem;
+   font-style: italic;
+   font-size: 0.8rem;
+}
+
+.badge.contacted {
+   background-color: rgb(161, 239, 125);
+}
+
+.badge.not-contacted {
+   color: white;
+   background-color: rgb(236, 100, 177);
+}
+
+.card h3 {
+   margin: 0;
+}
+
+.card .card-body {
+   margin-bottom: 1rem;
+}
+
+.card .card-footer {
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+}
+
+.breadcrumbs {
+   margin-bottom: 1rem;
+   font-size: 0.8rem;
+   color: var(--dark-green);
+}
+
+a.button {
+   background-color: var(--medium-green);
+   color: white;
+   padding: 0.25rem 1rem;
+   border-radius: 1rem;
+   transition: background-color 0.1s ease;
+}
+
+a.button:hover {
+   background-color: var(--dark-green);
+   transition: background-color 0.1s ease;
 }

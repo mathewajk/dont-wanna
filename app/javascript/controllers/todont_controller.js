@@ -8,10 +8,6 @@ export default class extends Controller {
             body: JSON.stringify({ to_dont: { completed: event.target.checked } })
         });
         let result = await request.perform();
-        // if (result.ok) {
-        //     document.getElementById("to_donts").reload();
-        //     document.getElementById("completed_to_donts").reload();
-        // }
     }
 
     toggleCompleted(event) {

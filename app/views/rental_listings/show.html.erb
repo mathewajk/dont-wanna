@@ -1,0 +1,55 @@
+<section class="full-width">
+    <div class="breadcrumbs">
+        <%= link_to "Rental Listings", rental_listings_path %> > 
+        <%= link_to @rental_listing.address, rental_listing_path(@rental_listing) %>
+    </div>
+    <div class="card-header">
+        <div class="star-container">
+            <input type="checkbox" class="checkbox star" <%= @rental_listing.contacted ? "checked" : "" %> data-action="click->rental_listing#toggle_contacted" data-id="<%= @rental_listing.id %>">
+            <h2><%= @rental_listing.address %></h2>
+        </div>
+        <a href="<%= @rental_listing.url %>" class="external-link">View Listing</a>
+        <% if @rental_listing.contacted %>
+            <span class="badge contacted">Contacted</span>
+        <% else %>
+            <span class="badge not-contacted">Not Contacted</span>
+        <% end %>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="rental-listing-container">
+                <div class="rental-listing-item table-header">
+                    <div class="price">Price</div>
+                    <div class="start">Start Date</div>
+                    <div class="price">Bedrooms</div>
+                    <div class="price">Bathrooms</div>
+                    <div class="price">Pets</div>
+                </div>
+                <div class="rental-listing-item <%= @rental_listing.available ? "available" : "" %> <%= @rental_listing.interested ? "interested" : "" %>" data-controller="rental_listing">
+                   <div class="price">
+                        <%= number_to_currency(@rental_listing.price, :unit => "$") %>
+                    </div>
+                    <div class="start">
+                        <%= l @rental_listing.start_date, :format => :date %>
+                    </div>
+                    <div class="price">
+                        <%= @rental_listing.bedrooms %>
+                    </div>
+                    <div class="price">
+                        <%= @rental_listing.bathrooms %>
+                    </div>
+                    <div class="price">
+                        <%= @rental_listing.pets %>
+                    </div>
+                </div>
+            </div>
+            <% if @rental_listing.notes %>
+                <h3>Notes</h3>
+                <%= @rental_listing.notes %>
+            <% end %>
+        </div>
+        <div class="card-footer">
+            <%= link_to "Edit", edit_rental_listing_path(@rental_listing), :class => "button" %>
+        </div>
+    </div>
+</section>
