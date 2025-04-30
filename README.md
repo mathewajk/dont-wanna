@@ -1,24 +1,11 @@
-# README
+# Don't Wanna!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Don't Wanna](dontwanna.png)
 
-Things you may want to cover:
+This is a silly app for creating to-dos and logging rental listings. I made it for myself and my partner to use while we manage a complicated move.
 
-* Ruby version
+## Roadmap
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Feature to ask "why" you don't want to do something, to help with thinking through blockers or working through emotional obstacles
+- Auto-reload after checking off a to-do(n't)
+- A way to automatically check if listings have been taken down
